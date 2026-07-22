@@ -18,14 +18,13 @@ let cookies = document.cookie.split('; ')
 cookies.forEach((cookie) => {
 	let part = cookie.split('=');
 	if (part[0] === "fontsize") {
-document.documentElement.style.setProperty("--fontsize", part[1]);
-    
+    document.documentElement.style.setProperty("--fontsize", part[1]);
+    fontSize.value = parseInt(part[1]);
 }
 
-if (parts[0] === "fontcolor") {
-    // apply font color
-document.documentElement.style.setProperty("--fontcolor", part[1]);
-	
+if (part[0] === "fontcolor") {
+    document.documentElement.style.setProperty("--fontcolor", part[1]);
+    fontColor.value = part[1];
 }
 });
 
